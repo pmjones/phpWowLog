@@ -1,4 +1,4 @@
-<?php namespace Wow\Log;
+<?php
 /**
  * PHP WowLog
  *
@@ -10,6 +10,8 @@
  * @license  http://www.opensource.org/licenses/mit-license.php MIT
  * @link     https://github.com/yftzeng/phpWowLog
  */
+
+namespace Wow\Log;
 
 /**
  * PHP WowLog
