@@ -2,7 +2,7 @@
     "name": "yftzeng/wowlog",
     "type": "library",
     "description": "Easy management your log files, with execution time, severity level.",
-    "keywords": ["wow","log","debug"],
+    "keywords": ["wow","log","debug","logger"],
     "homepage": "http://blog.gcos.me",
     "license": "MIT",
     "authors": [
