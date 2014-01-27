@@ -317,7 +317,7 @@ class WowLog
              * HACK: error_log() is faster than fwrite() and file_put_contents()
              */
 
-            if (is_array($message)) {
+            if (is_object($message) || is_array($message)) {
                 $message = print_r($message, true);
             }
             error_log(
