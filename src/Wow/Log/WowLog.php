@@ -320,13 +320,24 @@ class WowLog
             if (is_object($message) || is_array($message)) {
                 $message = print_r($message, true);
             }
-            error_log(
-                self::_getLogFormat(
-                    $severity, $bt['file'], $bt['function'], $bt['line']
-                ) . $message . PHP_EOL,
-                3,
-                $_logFile
-            );
+            if (isset($bt['file'])) {
+                error_log(
+                    self::_getLogFormat(
+                        $severity, $bt['file'], $bt['function'], $bt['line']
+                    ) . $message . PHP_EOL,
+                    3,
+                    $_logFile
+                );
+            }
+            else {
+                error_log(
+                    self::_getLogFormat(
+                        $severity, '', $bt['function'], ''
+                    ) . $message . PHP_EOL,
+                    3,
+                    $_logFile
+                );
+            }
         }
     }
 }
