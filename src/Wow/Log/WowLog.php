@@ -128,6 +128,16 @@ class WowLog
     }
 
     /**
+     * @comment return logDir
+     *
+     * @return string
+     */
+    public static function getLogDir()
+    {
+        return self::$_logDir;
+    }
+
+    /**
      * @param string $message  log message
      * @param string $logClass log class
      *
