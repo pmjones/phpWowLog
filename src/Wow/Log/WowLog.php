@@ -28,14 +28,15 @@ class WowLog
      * @var int
      * @comment overall severity level
      */
-    const OFF    = 9;
-    const EMER   = 8;
-    const ALERT  = 7;
-    const CRIT   = 6;
-    const ERROR  = 5;
-    const WARN   = 4;
-    const NOTICE = 3;
-    const INFO   = 2;
+    const OFF    = 10;
+    const EMER   = 9;
+    const ALERT  = 8;
+    const CRIT   = 7;
+    const ERROR  = 6;
+    const WARN   = 5;
+    const NOTICE = 4;
+    const INFO   = 3;
+    const TIME   = 2;
     const DEBUG  = 1;
 
     /**
@@ -95,6 +96,8 @@ class WowLog
             return self::NOTICE;
         } else if ($severity === 'INFO') {
             return self::INFO;
+        } else if ($severity === 'TIME') {
+            return self::TIME;
         } else if ($severity === 'DEBUG') {
             return self::DEBUG;
         } else {
@@ -148,6 +151,19 @@ class WowLog
     public static function debug($message, $logClass = '')
     {
         self::_log($message, self::DEBUG, $logClass);
+    }
+
+    /**
+     * @param string $message  log message
+     * @param string $logClass log class
+     *
+     * @comment debug level message
+     *
+     * @return void
+     */
+    public static function time($message, $logClass = '')
+    {
+        self::_log($message, self::TIME, $logClass);
     }
 
     /**
